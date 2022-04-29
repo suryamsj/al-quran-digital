@@ -3,7 +3,7 @@
 
   &#xa0;
 
-  <a href="https://routifystarter.netlify.app">Demo</a>
+  <a href="https://alquran-digitall.netlify.app/">Demo</a>
 </div>
 
 <h1 align="center">Al-Qur'an Digital</h1>
