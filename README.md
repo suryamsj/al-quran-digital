@@ -38,7 +38,7 @@
 
 ## :dart: About ##
 
-Al-Qur'An Digital adalah sebuah website untuk menampilkan dan memutar surah-surah dari Al-Quran.
+Al-Qur'an Digital adalah sebuah website untuk menampilkan dan memutar surah-surah dari Al-Quran.
 
 ## :sparkles: Features ##
 
