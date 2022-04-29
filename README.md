@@ -67,7 +67,7 @@ Sebelum memulai :checkered_flag:, pastikan sudah menginstall [Git](https://git-s
 $ git clone https://github.com/suryamsj/al-quran-digital
 
 # Access
-$ cd routify-starter
+$ cd al-quran-digital
 
 # Install dependencies
 $ npm install
