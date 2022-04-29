@@ -51,7 +51,7 @@ Al-Qur'An Digital adalah sebuah website untuk menampilkan dan memutar surah-sura
 
 Project ini dibangun dengan menggunakan:
 
-- [Svelte](hhttps://svelte.dev/)
+- [Svelte](https://svelte.dev/)
 - [Routify](https://www.routify.dev/)
 - [Bootstrap 5](https://getbootstrap.com/)
 - [API](https://github.com/rzkytmgr/Quran-API)
