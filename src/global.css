@@ -1,0 +1,145 @@
+html {
+	padding-top: 80px
+}
+
+body {
+	height: 100vh;
+	font-family: "Poppins", sans-serif
+}
+
+body::-webkit-scrollbar {
+	width: .2em;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: #232946;
+}
+
+.navbar {
+	background: #232946
+}
+
+.navbar-brand {
+	font-family: "Nunito", sans-serif;
+	font-weight: 800
+}
+
+header {
+	color: #232946;
+	font-family: "Nunito", sans-serif
+}
+
+header h1 {
+	font-weight: 800
+}
+
+#list .card {
+	padding: 1rem;
+	border-radius: 8px;
+	border: 2px solid #232946;
+	margin-bottom: 1.5rem;
+	box-shadow: 10px 10px #232946;
+}
+
+#list .card .number {
+	color: #fffffe;
+	background: #232946;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius: 8px;
+	margin-right: 5px;
+	padding: 6px 15px;
+}
+
+.number-ayat {
+	color: #fffffe;
+	background: #232946;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	border-radius: 8px;
+	margin-right: 5px;
+	padding: 6px 15px;
+	font-size: 1rem;
+	font-weight: 800;
+	font-family: "Nunito", sans-serif;
+}
+
+#list .card .title {
+	font-size: 1.5rem;
+	font-weight: 800;
+	margin-bottom: 20px;
+	font-family: "Nunito", sans-serif;
+}
+
+.translate {
+	line-height: 30px;
+	font-size: 1.1rem;
+}
+
+
+#list .title-bismillah {
+	font-size: 2rem;
+}
+
+#list .card .title-surat {
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+	text-align: right;
+	line-height: 2.5rem;
+}
+
+#list .card .title-surat .number {
+	font-size: 1.5rem;
+	font-weight: 800;
+	margin-bottom: 20px;
+	font-family: "Nunito", sans-serif;
+}
+
+.bismillah {
+	font-style: italic;
+}
+
+
+#list .card .title-surat p {
+	font-size: 1rem;
+	font-weight: 400;
+	font-style: italic;
+}
+
+
+#list .card .arti {
+	font-size: 1.1rem;
+	font-style: italic;
+	font-weight: 600
+}
+
+#list .card .info {
+	font-weight: 600
+}
+
+footer {
+	background: #232946;
+	color: #fffffe;
+	padding: 1.3rem;
+	text-align: center
+}
+
+footer p {
+	margin: 0 auto
+}
+
+footer p span {
+	color: red
+}
+
+footer p a {
+	color: #fffffe;
+	text-decoration: none
+}
+
+footer p a:hover {
+	text-decoration: none;
+	color: #b8c1ec
+}
