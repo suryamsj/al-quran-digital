@@ -1,3 +1,4 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./global.css";
 import HMR from "@roxi/routify/hmr";
 import App from "./App.svelte";
