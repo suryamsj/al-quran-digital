@@ -1,12 +1,55 @@
 <script>
     import Modal from "../components/Modal.svelte";
+
+    let listQuran = localStorage.getItem("surah")
+        ? JSON.parse(localStorage.getItem("surah"))
+        : [];
+
+    function addToList(
+        number,
+        asma_id,
+        asma_ar,
+        asma_translate_id,
+        count,
+        type_id,
+        tafsir_id
+    ) {
+        listQuran.push({
+            surah_number: number,
+            surah_asma_id: asma_id,
+            surah_asma_ar: asma_ar,
+            translate_id: asma_translate_id,
+            count: count,
+            type: type_id,
+            tafsir: tafsir_id,
+        });
+        listQuran = listQuran;
+    }
+
     const list = (async () => {
         const response = await fetch("https://quran-endpoint.vercel.app/quran");
         return await response.json();
     })();
+
+    list.then((data) => {
+        if (localStorage.getItem("surah") === null) {
+            for (let i = 0; i < 114; i++) {
+                addToList(
+                    data.data[i].number,
+                    data.data[i].asma.id.short,
+                    data.data[i].asma.ar.short,
+                    data.data[i].asma.translation.id,
+                    data.data[i].ayahCount,
+                    data.data[i].type.id,
+                    data.data[i].tafsir.id
+                );
+            }
+            localStorage.setItem("surah", JSON.stringify(listQuran));
+        }
+    });
 </script>
 
-{#await list}
+<!-- {#if listQuran === null}
     <section class="py-3 text-center">
         <div class="container">
             <div class="row">
@@ -16,7 +59,7 @@
             </div>
         </div>
     </section>
-{:then data}
+    {:else}
     <section id="list" class="py-1">
         <div class="container">
             <div class="row">
@@ -25,7 +68,9 @@
                         <div class="card">
                             <div class="card-body">
                                 <h1 class="title">
-                                    <span class="number">{surah.number}</span>
+                                    <span class="number"
+                                        >{surah.surah_number}</span
+                                    >
                                     {surah.asma.id.short}
                                     ({surah.asma.ar.short})
                                 </h1>
@@ -50,6 +95,62 @@
                                     title={surah.asma.id.short}
                                     tafsir={surah.tafsir.id}
                                     id={surah.number}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                {/each}
+            </div>
+        </div>
+    </section>
+{/if} -->
+
+{#await listQuran}
+    <section class="py-3 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="./loader.svg" alt="Loader" />
+                </div>
+            </div>
+        </div>
+    </section>
+{:then data}
+    <section id="list" class="py-1">
+        <div class="container">
+            <div class="row">
+                {#each data as surah}
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h1 class="title">
+                                    <span class="number"
+                                        >{surah.surah_number}</span
+                                    >
+                                    {surah.surah_asma_id}
+                                    ({surah.surah_asma_ar})
+                                </h1>
+                                <p class="arti">
+                                    "{surah.translate_id}"
+                                </p>
+                                <p class="info">
+                                    {surah.count} Ayat | {surah.type}
+                                </p>
+                                <a
+                                    href="/surah/{surah.surah_number}"
+                                    class="btn btn-baca">Baca Surah</a
+                                >
+                                <button
+                                    type="button"
+                                    class="btn btn-tafsir"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#tafsirModal{surah.surah_number}"
+                                    >Tafsir</button
+                                >
+                                <Modal
+                                    title={surah.surah_asma_id}
+                                    tafsir={surah.tafsir}
+                                    id={surah.surah_number}
                                 />
                             </div>
                         </div>
