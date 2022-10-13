@@ -44,6 +44,7 @@ Al-Qur'an Digital adalah sebuah website untuk menampilkan dan memutar surah-sura
 
 :heavy_check_mark: Single Page Aplication (SPA)\
 :heavy_check_mark: Responsive\
+:heavy_check_mark: Fitur cari surah\
 :heavy_check_mark: Terdapat tafsir dan arti dari surah maupun ayat\
 :heavy_check_mark: Audio Player
 
@@ -55,6 +56,7 @@ Project ini dibangun dengan menggunakan:
 - [Routify](https://www.routify.dev/)
 - [Bootstrap 5](https://getbootstrap.com/)
 - [API](https://github.com/rzkytmgr/Quran-API)
+- [Axios](https://axios-http.com/)
 
 ## :white_check_mark: Requirements ##
 

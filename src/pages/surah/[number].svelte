@@ -1,10 +1,16 @@
 <script>
     import { fly } from "svelte/transition";
-    import { callApi } from "../../utils/store";
+    import axios from "axios";
 
     export let number;
 
-    const list = callApi(`https://quran-endpoint.vercel.app/quran/${number}`);
+    const getSurah = async () => {
+        const response = await axios.get(
+            `https://quran-endpoint.vercel.app/quran/${number}`
+        );
+        return await response.data;
+    };
+    const list = getSurah();
 </script>
 
 <div
