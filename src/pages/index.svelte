@@ -41,9 +41,6 @@
                 aria-describedby="cari"
                 bind:value={search}
             />
-            <button class="btn btn-secondary" type="submit" id="btn_cari"
-                >Cari</button
-            >
         </div>
     </svelte:fragment>
 </Header>
@@ -173,13 +170,6 @@
     input {
         outline: none !important;
         box-shadow: none !important;
-    }
-
-    .btn-secondary {
-        background: #232946;
-        color: #ffffff;
-        border: none;
-        padding: 0 1.3rem;
     }
 
     @media (max-width: 767.98px) {
