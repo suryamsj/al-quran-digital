@@ -6,6 +6,7 @@
     import Modal from "../components/Modal.svelte";
     import Header from "../components/Header.svelte";
     import axios from "axios";
+    import Gambar from "../image/404.svg";
 
     onMount(async () => {
         $listSurah = await getSurah();
@@ -53,8 +54,11 @@
         <section class="py-3 text-center">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <img src="./loader.svg" alt="Loader" />
+                    <div class="col-lg-12 col-md-12 col-12">
+                        <div class="not-found text-center">
+                            <img src={Gambar} alt="404" />
+                            <h3>Surah tidak ditemukan</h3>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,6 +103,13 @@
                                 </div>
                             </div>
                         </div>
+                    {:else}
+                        <div class="col-lg-12 col-md-12 col-12">
+                            <div class="not-found text-center">
+                                <img src={Gambar} alt="404" />
+                                <h3>Surah tidak ditemukan</h3>
+                            </div>
+                        </div>
                     {/each}
                 </div>
             </div>
@@ -107,6 +118,10 @@
 </div>
 
 <style>
+    .not-found img {
+        width: 30%;
+        height: auto;
+    }
     img {
         width: 50px;
         height: auto;
@@ -170,6 +185,10 @@
     input {
         outline: none !important;
         box-shadow: none !important;
+    }
+
+    section {
+        min-height: 100vh;
     }
 
     @media (max-width: 767.98px) {
